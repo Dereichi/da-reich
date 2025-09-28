@@ -1,0 +1,43 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.13"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/postgresql:1": {
+      "version": "15"
+    },
+    "ghcr.io/devcontainers/features/mongodb:1": {
+      "version": "6.0"
+    },
+    "ghcr.io/devcontainers/features/redis:1": {
+      "version": "7"
+    },
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "github.vscode-pull-request-github",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.vscode-typescript-next",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 8000, 5432, 27017, 6379, 3306],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  }
+}
