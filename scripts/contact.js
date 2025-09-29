@@ -10,6 +10,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     return;
   }
 
-  document.getElementById("feedback").innerText = "Message sent! (Not really, but you get the idea 😄, eat poop)";
+  document.getElementById("feedback").innerText = "Message sent! (Not really, but you get the idea 😄, eat poop 💩)";
   this.reset();
 });
