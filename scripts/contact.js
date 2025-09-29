@@ -5,7 +5,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !message) {
+  if (!name || !email || !age || !message) {
     document.getElementById("feedback").innerText = "Please fill out all fields.";
     return;
   }
