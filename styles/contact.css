@@ -14,17 +14,24 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 label {
   display: block;
   margin-top: 1rem;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
 }
 
 button {
@@ -35,19 +42,27 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 #feedback {
   margin-top: 1rem;
-  color: green;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 600px) {
   .container {
     padding: 1rem;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
   }
 }
