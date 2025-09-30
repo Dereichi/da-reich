@@ -33,7 +33,7 @@
 
     <div id="downloadOptions" class="hidden">
       <p>What would you like to do next?</p>
-      <a href="files/sample-file.zip" target="_blank">Open in Browser</a>
+      <a href="files/hawk-icon.jpeg" target="_blank">Open in Browser</a>
       <button onclick="copyFileLink()">Copy File Link</button>
       <p id="copyStatus"></p>
     </div>
@@ -42,8 +42,8 @@
   <script>
     function handleDownload() {
       const link = document.createElement('a');
-      link.href = 'files/sample-file.zip';
-      link.download = 'sample-file.zip';
+      link.href = 'files/hawk-icon.jpeg';
+      link.download = 'hawk-icon.jpeg';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -52,7 +52,7 @@
     }
 
     function copyFileLink() {
-      const fileURL = window.location.origin + '/tech/files/sample-file.zip';
+      const fileURL = window.location.origin + '/tech/files/hawk-icon.jpeg';
       navigator.clipboard.writeText(fileURL).then(() => {
         document.getElementById('copyStatus').textContent = '✅ Link copied!';
       });
