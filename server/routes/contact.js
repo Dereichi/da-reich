@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const Contact = require('../models/Contact');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
@@ -22,6 +23,8 @@ router.post('/', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
     res.status(200).json({ success: true });
   } catch (err) {
     res.status(500).json({ error: err.message });
