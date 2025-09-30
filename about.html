@@ -29,34 +29,18 @@
     </ul>
 
     <h2>Download</h2>
-    <button onclick="handleDownload()">Download File</button>
+    <a href="files/sample-file.zip" download>
+      <button>Download File</button>
+    </a>
 
-    <div id="downloadOptions" class="hidden">
-      <p>What would you like to do next?</p>
-      <a href="files/hawk-icon.jpeg" target="_blank">Open in Browser</a>
-      <button onclick="copyFileLink()">Copy File Link</button>
-      <p id="copyStatus"></p>
+    <div id="chatbot">
+      <h2>Ask Me Anything</h2>
+      <input type="text" id="chatInput" placeholder="Ask about my skills or projects..." />
+      <button onclick="sendChat()">Send</button>
+      <div id="chatResponse"></div>
     </div>
   </main>
 
-  <script>
-    function handleDownload() {
-      const link = document.createElement('a');
-      link.href = 'files/hawk-icon.jpeg';
-      link.download = 'hawk-icon.jpeg';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      document.getElementById('downloadOptions').classList.remove('hidden');
-    }
-
-    function copyFileLink() {
-      const fileURL = window.location.origin + '/tech/files/hawk-icon.jpeg';
-      navigator.clipboard.writeText(fileURL).then(() => {
-        document.getElementById('copyStatus').textContent = '✅ Link copied!';
-      });
-    }
-  </script>
+  <script src="scripts/chatbot.js"></script>
 </body>
 </html>
