@@ -52,7 +52,7 @@
     }
 
     function copyFileLink() {
-      const fileURL = window.location.origin + '/tech/files/hawk-icon.jpeg';
+      const fileURL = window.location.origin + '/tech/files/sample-file.zip';
       navigator.clipboard.writeText(fileURL).then(() => {
         document.getElementById('copyStatus').textContent = '✅ Link copied!';
       });
