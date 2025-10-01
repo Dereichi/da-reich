@@ -1,40 +1,83 @@
-.hidden {
-  display: none;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.navbar {
+  background-color: #007bff;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #ffd700;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1, h2 {
+  color: #007bff;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 #downloadOptions {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #f0f8ff;
+  background-color: #e6f2ff;
   border: 1px solid #007bff;
   border-radius: 8px;
 }
 
-#downloadOptions p {
+.hidden {
+  display: none;
+}
+
+#chatbot {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff8dc;
+  border: 1px solid #f4c430;
+  border-radius: 8px;
+}
+
+#chatInput {
+  width: 100%;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-#downloadOptions a,
-#downloadOptions button {
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#downloadOptions a:hover,
-#downloadOptions button:hover {
-  background-color: #0056b3;
-}
-
-#copyStatus {
-  margin-top: 0.5rem;
-  color: green;
-  font-weight: bold;
 }
