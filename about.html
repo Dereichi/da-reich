@@ -12,7 +12,7 @@
     <nav class="navbar">
       <a href="index.html">Home</a>
       <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
+      <a href="about.html" class="active">About</a>
     </nav>
   </header>
 
@@ -29,9 +29,14 @@
     </ul>
 
     <h2>Download</h2>
-    <a href="files/hawk-icon.jpeg" download>
-      <button>Download File</button>
-    </a>
+    <button onclick="handleDownload()">Download File</button>
+
+    <div id="downloadOptions" class="hidden">
+      <p>What would you like to do next?</p>
+      <a href="files/sample-file.zip" target="_blank">Open in Browser</a>
+      <button onclick="copyFileLink()">Copy File Link</button>
+      <p id="copyStatus"></p>
+    </div>
 
     <div id="chatbot">
       <h2>Ask Me Anything</h2>
@@ -42,5 +47,24 @@
   </main>
 
   <script src="scripts/chatbot.js"></script>
+  <script>
+    function handleDownload() {
+      const link = document.createElement('a');
+      link.href = 'files/sample-file.zip';
+      link.download = 'sample-file.zip';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      document.getElementById('downloadOptions').classList.remove('hidden');
+    }
+
+    function copyFileLink() {
+      const fileURL = window.location.origin + '/files/sample-file.zip';
+      navigator.clipboard.writeText(fileURL).then(() => {
+        document.getElementById('copyStatus').textContent = '✅ Link copied!';
+      });
+    }
+  </script>
 </body>
 </html>
